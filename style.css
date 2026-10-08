@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 16px 24px;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #ffffff;
+
+  background-image: url("fundo-claro.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  transition: background 0.4s ease;
+}
+
+.card {
+  background: #1c99ff;
+  width: 320px;
+  max-width: 100%;
+  padding: 32px 24px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 25%;
+  display: block;
+  margin: 0 auto 16px;
+  border: 3px solid #ffffff;
+}
+
+h1 {
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.cargo {
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.bio {
+  color: #ffffff;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.links a {
+  display: block;
+  text-decoration: none;
+  background: #0059ff;
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.links a:hover {
+  background: #2f00ff;
+  transform: translateY(-2px);
+}
+
+/* Botão de tema */
+#theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  padding: 11px 16px;
+  border: none;
+  border-radius: 25px;
+  background: #ffffff;
+  color: #222222;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.04);
+}
+
+/* Modo noturno */
+body.dark-mode {
+  background-image: url("fundo-escuro.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+body.dark-mode .card {
+  background: #202b3c;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .links a {
+  background: #334b70;
+}
+
+body.dark-mode .links a:hover {
+  background: #476da8;
+}
+
+body.dark-mode #theme-toggle {
+  background: #293548;
+  color: #ffffff;
+  border: 1px solid #52627a;
+}
+
+@media (max-width: 400px) {
+  body {
+    padding-top: 76px;
+  }
+
+  .card {
+    padding: 24px 16px;
+  }
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  #theme-toggle {
+    top: 12px;
+    right: 12px;
+  }
+}
